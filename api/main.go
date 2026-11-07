@@ -173,6 +173,7 @@ func buildResponse(ents map[string]entityState) map[string]interface{} {
 	}
 
 	computed := map[string]interface{}{
+		"bedroom_window_open":  switchOn(ents, "binary_sensor.window_sensor"),
 		"den_temperature":      mustState(ents, "sensor.apollo_msr_2_414570_dps310_temperature"),
 		"den_temperature_unit": denTempUnit(ents),
 		"base_stations_on":     anyBaseStationOn(ents),
