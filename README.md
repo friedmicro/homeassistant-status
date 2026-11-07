@@ -30,8 +30,10 @@ This works by obtaining an access token from home assistant and using that on a 
 
 End of the day this is really just a wrapper around home assistant so that you can request information from an API that is truly readonly and a few examples of it in use.
 
-## Build
-To build any of these services either use the respective dockerfile (modifying the image tags to ones that are suitable to you) or run `go build .` in the respective directories.
+## Build\use
+To build any of the serverside services either use the respective dockerfile (modifying the image tags to ones that are suitable to you) or run `go build .` in the respective directories.
+
+For the waybar directory run `cargo builds --release` and copy the built binary into your location of your choice. Do note it depends upon this project to work over a local unix socket: https://github.com/friedmicro/waybar-net-daemon.
 
 ## Fetch service configuration
 
