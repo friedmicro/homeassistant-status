@@ -53,8 +53,8 @@ func stateOf(ents map[string]entityState, id string) (string, bool) {
 
 func baseStationOffline(ents map[string]entityState) bool {
 	for _, n := range []string{"1", "2", "3", "4"} {
-		st, ok := stateOf(ents, "sensor.lucia_base_station_"+n+"_power_state")
-		if ok && st == "unknown" {
+		st, ok := stateOf(ents, "switch.lucia_base_station_"+n)
+		if ok && st == "unavailable" {
 			return true
 		}
 	}
